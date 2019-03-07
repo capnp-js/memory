@@ -2,10 +2,11 @@
 
 import * as assert from "assert";
 import { describe, it } from "mocha";
+import { create } from "@capnp-js/bytes";
 
 import { SegmentRangeError, assertInBounds } from "../../src/assertInBounds";
 
-const segment = { id: 0, raw: new Uint8Array(16), end: 16 };
+const segment = { id: 0, raw: create(16), end: 16 };
 
 describe("assertInBounds", function () {
   it("doesn't throw for in bounds ranges", function () {
