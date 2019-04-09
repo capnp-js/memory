@@ -42,3 +42,4 @@ export type SegmentB = {
 export { SegmentRangeError, assertInBounds } from "./assertInBounds";
 export { default as isNull } from "./isNull";
 export { default as root } from "./root";
+export { trim, unsafeTrim } from "./trim";

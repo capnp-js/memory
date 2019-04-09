@@ -88,14 +88,18 @@ function browserLib() {
 function browserRollup() {
   return rollup({
     input: "browser/lib/index.js",
-    external: [],
+    external: [
+      "@capnp-js/bytes",
+    ],
   }).then(bundle => {
     bundle.write({
       file: "browser/capnp-js-memory.js",
       format: "umd",
       name: "capnpJsMemory",
       sourcemap: true,
-      globals: {},
+      globals: {
+        "@capnp-js/bytes": "capnpJsBytes",
+      },
     });
   });
 }
