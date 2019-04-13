@@ -43,4 +43,4 @@ export { SegmentRangeError, assertInBounds } from "./assertInBounds";
 export { default as isNull } from "./isNull";
 export { default as root } from "./root";
 export { default as segmentize } from "./segmentize";
-export { trim, unsafeTrim } from "./trim";
+export { default as trim } from "./trim";

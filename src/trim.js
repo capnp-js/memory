@@ -2,10 +2,8 @@
 
 import type { SegmentR, SegmentB } from "./index";
 
-export function trim(segment: SegmentB): Uint8Array {
-  return ((segment.raw: any): Uint8Array).subarray(0, segment.end); // eslint-disable-line flowtype/no-weak-types
-}
+import { getSubarray } from "@capnp-js/bytes";
 
-export function unsafeTrim(segment: SegmentR): Uint8Array {
-  return ((segment.raw: any): Uint8Array).subarray(0, segment.end); // eslint-disable-line flowtype/no-weak-types
+export default function trim<T: SegmentR | SegmentB>(segment: T): $PropertyType<T, "raw"> {
+  return getSubarray(0, segment.end, segment.raw);
 }
